@@ -1,0 +1,57 @@
+/* Section transition animations */
+.section-hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+/* Apply transitions to main sections */
+.About-Section, 
+.Experience-Section, 
+.Project-Section, 
+.Contact-Section,
+.CLUB-SECTION,
+.section-titles,
+.content-wrapper,
+.proj-containers,
+.aboutcontainer,
+.club-container,
+.intro-container {
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Work experience staggered animation adjustments */
+.work-experience .experience {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.experience .experience-header,
+.experience .company-logo,
+.experience .company,
+.experience .position,
+.experience .year,
+.experience .description {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+} 

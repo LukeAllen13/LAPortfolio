@@ -7,8 +7,13 @@
   <link rel="icon" type="image/x-icon" href="/images/JY.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/slideshow.css">
 </head>
 <body>
+  
+  <!-- Particles background for entire site -->
+  <div id="particles-js"></div>
   
   <div class="navbar">
     <a href="./index.html" class="navbar-title">Justin Yoo</a>
@@ -46,16 +51,13 @@
     <p id="homelink" class="emptyDivHome"></p>
   </div>
 
-  <div class="back" style="background-image: url('assets/img/background.jpeg'); background-size: cover; background-position: center; height: 100vh; width: 100%; position: relative;">
-    <div class="overlay"></div>
-  </div>
-
-  <div class="content">
+  <!-- Home section with content -->
+  <div class="home-section">
     <div class="mid">
       <h1 id="home">Justin Yoo</h1>
       <div class="outer-headings">
         <div class="words">
-          <p class="static">I'm a&nbsp;&nbsp;&nbsp;</p> 
+          <p class="static">I'm a</p> 
           <span>
             Developer<br>
             Innovator<br>
@@ -63,10 +65,14 @@
           </span>
         </div>
       </div>
-      <a href="https://github.com/justineyoo1" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/justineyoo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <div class="social-links">
+        <a href="https://github.com/justineyoo1" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/justineyoo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
     </div>
+  </div>
 
+  <div class="content">
     <div>
       <p id="aboutlink" class="emptyDiv"></p>
     </div>
@@ -76,12 +82,57 @@
         <h1 id="about">About</h1>
       </div>
       <div class="intro-container">
-        <p id="intro">Hi! My name is Justin Yoo and I am a student at the University of North Carolina at Chapel Hill pursuing B.S. degrees in Computer Science and Statistics.</p>
+        <p id="intro"><span class="university-name">University of North Carolina at Chapel Hill</span>
+          <span class="degrees">B.S. Computer Science | B.S. Statistics</span></p>
       </div>
       <br>
       <div class="aboutcontainer">
         <div class="pic">
-          <img id="headshot" src="./images/headshotCroppedMore.jpg" alt="headshot">
+          <div class="slideshow-container">
+            <div class="mySlides fade">
+              <img src="assets/img/PersonalPictures/personalportfolio1.jpg" alt="Justin Yoo" class="slideshow-img">
+              <div class="slide-caption">Professional Portrait</div>
+            </div>
+            <div class="mySlides fade">
+              <img src="assets/img/PersonalPictures/personalportfolio2.jpg" alt="Justin Yoo" class="slideshow-img">
+              <div class="slide-caption">Campus Life</div>
+            </div>
+            <div class="mySlides fade">
+              <img src="assets/img/PersonalPictures/personalportfolio3.jpg" alt="Justin Yoo" class="slideshow-img">
+              <div class="slide-caption">Academic Setting</div>
+            </div>
+            <div class="mySlides fade">
+              <img src="assets/img/PersonalPictures/personalportfolio4.jpg" alt="Justin Yoo" class="slideshow-img">
+              <div class="slide-caption">Tech Conference</div>
+            </div>
+            <div class="mySlides fade">
+              <img src="assets/img/PersonalPictures/personalportfolio5.jpg" alt="Justin Yoo" class="slideshow-img">
+              <div class="slide-caption">Networking Event</div>
+            </div>
+            <div class="mySlides fade">
+              <img src="assets/img/PersonalPictures/personalportfolio6.jpg" alt="Justin Yoo" class="slideshow-img">
+              <div class="slide-caption">Presentation Day</div>
+            </div>
+            <div class="mySlides fade">
+              <img src="assets/img/PersonalPictures/personalportfolio7.jpg" alt="Justin Yoo" class="slideshow-img">
+              <div class="slide-caption">Coding Session</div>
+            </div>
+            
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            <!-- Navigation dots -->
+            <div class="slideshow-dots">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+              <span class="dot" onclick="currentSlide(5)"></span>
+              <span class="dot" onclick="currentSlide(6)"></span>
+              <span class="dot" onclick="currentSlide(7)"></span>
+            </div>
+          </div>
         </div>
         <div class="description">
           <p id="body">
@@ -124,8 +175,7 @@
                 <p class="club-title">Korean American Students Association</p>
                 <p class="club-description">
                     Engaging with fellow students to help promote Korean culture and traditions
-                    while fostering a sense of community 
-                    with students of Korean descent</p>
+                    </p>
                 <div class="club-hover">
                     <p>Learn More!</p>
                 </div>
@@ -143,13 +193,7 @@
         <h1 id="experience">Experience</h1>
       </div>
       <div class="resume-content">
-        <p>
-          Download a PDF of my Resume  
-          <a href="./Justin_Y__Resume (9).pdf" target="_blank" id="resume_hand_link">
-            <i class="fa-regular fa-hand-point-right"></i> here <i class="fa-regular fa-hand-point-left"></i>
-          </a>
-          or via the resume icon in the upper-right corner.
-        </p>
+        <!-- Resume download text removed -->
       </div>
 
       <div class="content-wrapper">
@@ -216,9 +260,14 @@
           <h3 class="expsection-title">Work Experience</h3>
           <div class="work-experience">
             <div class="experience">
-              <h4 class="company">Red Hat (IBM Subsidiary)</h4>
-              <h5 class="position">Data Science Intern</h5>
-              <p class="year">May 2025 – Aug 2025</p>
+              <div class="experience-header">
+                <img src="assets/img/RedHatLogo.jpg" alt="Red Hat Logo" class="company-logo">
+                <div class="company-info">
+                  <h4 class="company">Red Hat (IBM Subsidiary)</h4>
+                  <h5 class="position">Data Science Intern</h5>
+                  <p class="year">May 2025 – Aug 2025</p>
+                </div>
+              </div>
               <ul class="description">
                 <li>Contributed to data-driven projects to improve product performance.</li>
                 <li>Utilized Python and data visualization tools to derive actionable insights.</li>
@@ -227,9 +276,14 @@
             </div>
 
             <div class="experience">
-              <h4 class="company">UNC Chapel Hill - Computer Science Department</h4>
-              <h5 class="position">Undergraduate Teaching Assistant</h5>
-              <p class="year">Aug 2025 – Present</p>
+              <div class="experience-header">
+                <img src="assets/img/UNCCSD.jpg" alt="UNC CS Department Logo" class="company-logo">
+                <div class="company-info">
+                  <h4 class="company">UNC Chapel Hill - Computer Science Department</h4>
+                  <h5 class="position">Undergraduate Teaching Assistant</h5>
+                  <p class="year">Aug 2025 – Present</p>
+                </div>
+              </div>
               <ul class="description">
                 <li>Assisting in lab sessions and providing support for introductory courses.</li>
                 <li>Grading assignments and helping students grasp core programming concepts.</li>
@@ -238,9 +292,14 @@
             </div>
 
             <div class="experience">
-              <h4 class="company">UNC CS + Social Good</h4>
-              <h5 class="position">Back-End Software Developer</h5>
-              <p class="year">Aug 2024 – Present</p>
+              <div class="experience-header">
+                <img src="assets/img/unccssg.jpg" alt="UNC CS + Social Good Logo" class="company-logo">
+                <div class="company-info">
+                  <h4 class="company">UNC CS + Social Good</h4>
+                  <h5 class="position">Back-End Software Developer</h5>
+                  <p class="year">Aug 2024 – Present</p>
+                </div>
+              </div>
               <ul class="description">
                 <li>Developing backend systems and APIs to support social impact projects.</li>
                 <li>Implementing robust database solutions and server-side logic.</li>
@@ -383,5 +442,120 @@
     <script src="footer.js"></script>
   </div>
 
+  <!-- Particles.js scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 100,
+          "density": {
+            "enable": true,
+            "value_area": 1000
+          }
+        },
+        "color": {
+          "value": "#64ffda"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.3,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 0.5,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#8892b0",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": true,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "bubble"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 200,
+            "size": 4,
+            "duration": 2,
+            "opacity": 0.8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+  
+  <!-- Load animations.js -->
+  <script src="js/animations.js"></script>
+  
+  <!-- Load slideshow.js -->
+  <script src="js/slideshow.js"></script>
 </body>
 </html>
