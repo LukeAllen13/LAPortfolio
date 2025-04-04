@@ -15,8 +15,8 @@ class TextScramble {
     for (let i = 0; i < length; i++) {
       const from = oldText[i] || '';
       const to = newText[i] || '';
-      const start = Math.floor(Math.random() * 40);
-      const end = start + Math.floor(Math.random() * 40);
+      const start = Math.floor(Math.random() * 10);
+      const end = start + Math.floor(Math.random() * 15);
       this.queue.push({ from, to, start, end });
     }
     
@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const scrambler = new TextScramble(nameElement);
   
   let isScrambling = true;
+  let scrambleTimer = null;
   
   // Function to continuously scramble the text
   function scramble() {
@@ -83,23 +84,45 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set the scrambled text, then call scramble again after a short delay
     scrambler.setText(scrambledText).then(() => {
       if (isScrambling) {
-        setTimeout(scramble, 100); // Keep scrambling with minimal delay
+        // Clear any existing timer to prevent overlapping animations
+        if (scrambleTimer) clearTimeout(scrambleTimer);
+        // Set shorter delay (50ms) for faster animation cycles
+        scrambleTimer = setTimeout(scramble, 50);
       }
     });
   }
   
-  // Start scrambling initially
-  scramble();
+  // Ensure we reset to the original text after 5 seconds max
+  function startScrambling() {
+    scramble();
+    // Force reset to original text after 5 seconds if still scrambling
+    setTimeout(() => {
+      if (isScrambling) {
+        isScrambling = false;
+        scrambler.setText(originalText).then(() => {
+          // Wait a moment and start scrambling again
+          setTimeout(() => {
+            isScrambling = true;
+            startScrambling();
+          }, 1000);
+        });
+      }
+    }, 5000);
+  }
+  
+  // Start the scrambling cycle
+  startScrambling();
   
   // Stop scrambling on hover and show original name
   nameElement.addEventListener('mouseenter', () => {
     isScrambling = false;
+    if (scrambleTimer) clearTimeout(scrambleTimer);
     scrambler.setText(originalText);
   });
   
   // Resume scrambling when mouse leaves
   nameElement.addEventListener('mouseleave', () => {
     isScrambling = true;
-    scramble();
+    startScrambling();
   });
 }); 
