@@ -1784,3 +1784,13 @@ footer {
     background-color: rgba(100, 255, 218, 0.8);
     color: var(--background-color);
 }
+
+.scrambled-char {
+    color: var(--highlight-color);
+    display: inline-block;
+    opacity: 0.8;
+}
+
+#home {
+    cursor: pointer;
+}
