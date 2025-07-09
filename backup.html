@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luke Allen's Portfolio</title>
-  <link rel="icon" type="image/x-icon" href="/images/">
+  <link rel="icon" type="image/x-icon" href="/images/JY.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -12,6 +12,7 @@
 </head>
 <body>
   
+  <!-- Particles background for entire site -->
   <div id="particles-js"></div>
   
   <div class="navbar">
@@ -37,6 +38,11 @@
       <li class="navbar__item">
         <a href="#contactlink" class="navbar__links">Contact</a>
       </li>
+      <li class="navbar__item">
+        <a href="./Justin_Y__Resume (9).pdf" target="_blank" class="navbar__links">
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
+      </li>
     </ul>
   </div>
   <script src="menu.js"></script>
@@ -45,9 +51,19 @@
     <p id="homelink" class="emptyDivHome"></p>
   </div>
 
+  <!-- Home section with content -->
   <div class="home-section">
     <div class="mid">
       <h1 id="home">Luke Allen</h1>
+      <div class="outer-headings">
+        <div class="words">
+          <span>
+            Student<br>
+            Developer<br>
+            Creator<br>
+          </span>
+        </div>
+      </div>
       <div class="social-links">
         <a href="https://github.com/LukeAllen13" target="_blank"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.linkedin.com/in/luke-allen-b03745298/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -73,21 +89,23 @@
         <div class="pic">
           <div class="slideshow-container">
             <div class="mySlides fade">
-              <img src="assets/img/PersonalPictures/" alt="Luke Allen" class="slideshow-img">
+              <img src="assets/img/PersonalPictures/personalportfolio1.jpg" alt="Luke Allen" class="slideshow-img">
             </div>
             <div class="mySlides fade">
-              <img src="assets/img/PersonalPictures/" alt="Luke Allen" class="slideshow-img">
+              <img src="assets/img/PersonalPictures/personalportfolio2.jpg" alt="Luke Allen" class="slideshow-img">
             </div>
             <div class="mySlides fade">
-              <img src="assets/img/PersonalPictures/" alt="Luke Allen" class="slideshow-img">
+              <img src="assets/img/PersonalPictures/personalportfolio3.jpg" alt="Luke Allen" class="slideshow-img">
             </div>
             <div class="mySlides fade">
-              <img src="assets/img/PersonalPictures/" alt="Luke Allen" class="slideshow-img">
+              <img src="assets/img/PersonalPictures/personalportfolio4.jpg" alt="Luke Allen" class="slideshow-img">
             </div>
             
+            <!-- Navigation arrows -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
             
+            <!-- Navigation dots -->
             <div class="slideshow-dots">
               <span class="dot" onclick="currentSlide(1)"></span>
               <span class="dot" onclick="currentSlide(2)"></span>
@@ -123,7 +141,7 @@
                 </div>
             </a>
 
-            <a href="https://www.ai-unc.com/" target="_blank" class="club-box">
+            <a href="https://heellife.unc.edu/organization/aiunc" target="_blank" class="club-box">
                 <img src="assets/img/AIUNC.jpeg" alt="AI@UNC" class="club-image">
                 <p class="club-title">AI@UNC</p>
                 <p class="club-description">Gaining hands-on practice working with AI libraries and frameworks & understanding the of uses of AI</p>
@@ -132,11 +150,11 @@
                 </div>
             </a>
 
-            <a href="https://heellife.unc.edu/organization/clubgolf" target="_blank" class="club-box">
-                <img src="assets/img/PersonalPictures/UNCgolf.jpg" alt="UNCGOLF" class="club-image">
-                <p class="club-title">UNC Club Golf</p>
+            <a href="https://heellife.unc.edu/organization/unckasa" target="_blank" class="club-box">
+                <img src="assets/img/UNCKASA.jpeg" alt="KASA" class="club-image">
+                <p class="club-title">Korean American Students Association</p>
                 <p class="club-description">
-                    Engaging with fellow students in club competition throughout NC.
+                    Engaging with fellow students to help promote Korean culture and traditions
                     </p>
                 <div class="club-hover">
                     <p>Learn More!</p>
@@ -154,6 +172,9 @@
       <div class="section-titles">
         <h1 id="experience">Experience</h1>
       </div>
+      <div class="resume-content">
+        <!-- Resume download text removed -->
+      </div>
 
       <div class="content-wrapper">
         <div class="left-section">
@@ -168,7 +189,6 @@
                   <li>HTML</li>
                   <li>CSS</li>
                   <li>JavaScript</li>
-                  <li>Figma</li>
                 </ul>
               </div>
 
@@ -193,7 +213,6 @@
                     <li>Docker</li>
                     <li>AWS</li>
                     <li>Kubernetes</li>
-                    <li>AccelQ</li>
                   </ul>
                 </div>
               </div>
@@ -222,17 +241,33 @@
           <div class="work-experience">
             <div class="experience">
               <div class="experience-header">
-                <img src="assets/img/amwins_logo.jpg" alt="Red Hat Logo" class="company-logo">
+                <img src="assets/img/RedHatLogo.jpg" alt="Red Hat Logo" class="company-logo">
                 <div class="company-info">
-                  <h4 class="company">Amwins</h4>
-                  <h5 class="position">Software QA Intern</h5>
+                  <h4 class="company">Red Hat (IBM Subsidiary)</h4>
+                  <h5 class="position">Data Science Intern</h5>
                   <p class="year">May 2025 – Aug 2025</p>
                 </div>
               </div>
               <ul class="description">
-                <li>Used AccelQ, a Selenium-based automated testing tool, to evaluate application quality and performance.</li>
-                <li>Partnered with QA analysts to identify critical defects within the application’s framework.</li>
-                <li>Communicated key findings to software developers, providing actionable resources to support efficient debugging and resolution.</li>
+                <li>Contributed to data-driven projects to improve product performance.</li>
+                <li>Utilized Python and data visualization tools to derive actionable insights.</li>
+                <li>Collaborated with cross-functional teams in a fast-paced environment.</li>
+              </ul>
+            </div>
+
+            <div class="experience">
+              <div class="experience-header">
+                <img src="assets/img/UNCCSD.jpg" alt="UNC CS Department Logo" class="company-logo">
+                <div class="company-info">
+                  <h4 class="company">UNC Chapel Hill - Computer Science Department</h4>
+                  <h5 class="position">Undergraduate Teaching Assistant</h5>
+                  <p class="year">Aug 2025 – Present</p>
+                </div>
+              </div>
+              <ul class="description">
+                <li>Assisting in lab sessions and providing support for introductory courses.</li>
+                <li>Grading assignments and helping students grasp core programming concepts.</li>
+                <li>Collaborating with faculty to improve course content and student engagement.</li>
               </ul>
             </div>
 
@@ -249,22 +284,6 @@
                 <li>Developing backend systems and APIs to support social impact projects.</li>
                 <li>Implementing robust database solutions and server-side logic.</li>
                 <li>Working with a team to ensure scalable and secure application development.</li>
-              </ul>
-            </div>
-
-            <div class="experience">
-              <div class="experience-header">
-                <img src="assets/img/factory_reality.jpeg" alt="Factory Reality Logo" class="company-logo">
-                <div class="company-info">
-                  <h4 class="company">Factory Reality</h4>
-                  <h5 class="position">Data Systems Intern</h5>
-                  <p class="year">April 2024 – July 2024</p>
-                </div>
-              </div>
-              <ul class="description">
-                <li>Scoped a 2 month long automation project while in finals season my freshman year of college.</li>
-                <li>Utilized Microsoft Power Automate to collect data during the proposal to paid process of a building information modeling firm based out of Turkey.</li>
-                <li>Met weekly both in person and online with their sole U.S. rep.</li>
               </ul>
             </div>
           </div>
@@ -284,21 +303,109 @@
   
       <!-- ML Movie Recommender System -->
       <div class="project-box" id="projectbox1">
-        
+        <h3 class="project-title">ML Movie Recommender System</h3>
+        <p class="project-description">
+          Developed a machine learning model using Python, Scikit-learn, and Flask to provide personalized movie recommendations.
+        </p>
+        <p class="project-languages"><em>Python | Scikit-learn | Flask</em></p>
+        <div class="project-gif">
+          <img src="./images/movie_recommender.gif" alt="Movie Recommender Demo">
+        </div>
+        <div class="view-project">
+          <a href="https://github.com/justineyoo1/ML-Movie-Recommender" target="_blank">View Project on Github</a>
+        </div>
       </div>
   
       <!-- Tweet Sentiment Analyzer -->
       <div class="project-box" id="projectbox2">
-        
+        <h3 class="project-title">Tweet Sentiment Analyzer</h3>
+        <p class="project-description">
+          Built a sentiment analysis tool that processes tweets using Python and NLP, with interactive visualizations powered by Flask and Chart.js.
+        </p>
+        <p class="project-languages"><em>Python | NLP | Flask | Chart.js</em></p>
+        <div class="project-gif">
+          <img src="./images/tweet_sentiment.gif" alt="Tweet Sentiment Analyzer Demo">
+        </div>
+        <div class="view-project">
+          <a href="https://github.com/justineyoo1/Tweet-Sentiment-Analyzer" target="_blank">View Project on Github</a>
+        </div>
       </div>
   
       <!-- Akari Puzzle Game -->
       <div class="project-box" id="projectbox3">
-        
+        <h3 class="project-title">Akari Puzzle Game</h3>
+        <p class="project-description">
+          Developed a fully functional GUI for the Akari logic puzzle using Java, HTML, and CSS. Implemented the MVC design pattern and achieved 100% accuracy in unit tests.
+        </p>
+        <p class="project-languages"><em>Java | HTML | CSS</em></p>
+        <div class="project-gif" id="proj3photo">
+          <img src="./images/akari_game.gif" alt="Akari Puzzle Game Demo">
+        </div>
+        <div class="view-project">
+          <a href="https://github.com/justineyoo1/Akari-Puzzle-Game" target="_blank">View Project on Github</a>
+        </div>
       </div>
   
     </section>
   </section>
+  
+
+    <!-- CONTACT SECTION -->
+    <div>
+      <p id="contactlink" class="emptyDiv"></p>
+    </div>
+    <section class="Contact-Section">
+      <div class="section-titles">
+        <h1 id="contact">Contact</h1>
+      </div>
+      <div class="contact-container">
+        <div class="contact-leftdiv">
+          <p><i class="fa-solid fa-location-dot" id="c-icon"></i> <span class="c-header-text">Location:</span> Chapel Hill, NC</p>
+          <p><i class="fa-solid fa-envelope" id="c-icon"></i> <span class="c-header-text">Email:</span> <a href="mailto:apl1@unc.edu" class="email-link" target="_blank">apl1@unc.edu</a></p>
+          <p><i class="fa-solid fa-phone" id="c-icon"></i> <span class="c-header-text">Phone:</span> (980)322-9772</p>
+        </div>
+        <div class="contact-rightdiv">
+          <div class="cdiv-topright">
+            <div class="map-titlediv">
+              <h3><i class="fa-solid fa-map-location"></i> Location </h3>
+              <label class="switch">
+                <input type="checkbox" id="toggle-map-mode">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <iframe id="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10746.844677925506!2d-79.05284622215449!3d35.90837345098078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acc2d2cb17aaeb%3A0xb33bf0976497e0e0!2sUniversity%20of%20North%20Carolina%20at%20Chapel%20Hill!5e0!3m2!1sen!2sus!4v1720039200959!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <script src="./maptoggle.js"></script>
+          </div>
+          <div class="cdiv-bottomright">
+            <section class="contactform-content">
+              <div class="contact-left-title">
+                <h2>Get in touch</h2>
+                <hr>
+              </div>
+              <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="a2bef6ba-ec2c-4592-96eb-30819429ced7">
+                <div class="input-box">
+                  <div class="input-field field">
+                    <input type="text" placeholder="Full Name" id="name" name="name" class="item" autocomplete="off">
+                    <div class="error-txt">Full Name can't be blank</div>
+                  </div>
+                  <div class="input-field field">
+                    <input type="text" placeholder="Email Address" id="email" name="email" class="item" autocomplete="off">
+                    <div class="error-txt email">Email can't be blank</div>
+                  </div>
+                </div>
+                <div class="textarea-field field">
+                  <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message" class="item" autocomplete="off"></textarea>
+                  <div class="error-txt">Message can't be blank</div>
+                </div>
+                <button type="submit">Send Message<i class="fa-solid fa-arrow-right"></i></button>
+              </form>
+            </section>
+            <script src="./contactform.js"></script>
+          </div>
+        </div>
+      </div>
+    </section>
     
     <footer>
       <div class="footer-content">
@@ -315,8 +422,15 @@
     <script src="footer.js"></script>
   </div>
 
+  
+  <!-- Load particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="js/particles.js"></script>
+  
+  <!-- Load animations.js -->
+  <script src="js/animations.js"></script>
+  
+  <!-- Load slideshow.js -->
   <script src="js/slideshow.js"></script>
 </body>
 </html>

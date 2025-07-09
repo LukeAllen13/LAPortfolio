@@ -1,65 +1,51 @@
 particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 100,
+      "value": 60,
       "density": {
         "enable": true,
-        "value_area": 1000
+        "value_area": 900
       }
     },
     "color": {
-      "value": "#64ffda"
+      "value": "#56a0d3"  // will be dynamically updated
     },
     "shape": {
-      "type": "circle",
+      "type": "triangle",
       "stroke": {
         "width": 0,
         "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
       }
     },
     "opacity": {
-      "value": 0.3,
+      "value": 0.9,
+      "random": false
+    },
+    "size": {
+      "value": 15,
       "random": true,
       "anim": {
         "enable": true,
-        "speed": 0.5,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
+        "speed": 5,
+        "size_min": 5,
         "sync": false
       }
     },
     "line_linked": {
       "enable": true,
-      "distance": 150,
-      "color": "#8892b0",
-      "opacity": 0.2,
-      "width": 1
+      "distance": 130,
+      "color": "#8ec5fc",
+      "opacity": 0.3,
+      "width": 2
     },
     "move": {
       "enable": true,
-      "speed": 2,
+      "speed": 1.2,
       "direction": "none",
       "random": true,
       "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": true,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
+      "out_mode": "bounce",
+      "bounce": true
     }
   },
   "interactivity": {
@@ -71,7 +57,7 @@ particlesJS("particles-js", {
       },
       "onclick": {
         "enable": true,
-        "mode": "push"
+        "mode": "repulse"
       },
       "resize": true
     },
@@ -79,22 +65,22 @@ particlesJS("particles-js", {
       "grab": {
         "distance": 140,
         "line_linked": {
-          "opacity": 1
+          "opacity": 0.6
         }
       },
       "bubble": {
         "distance": 200,
-        "size": 4,
+        "size": 20,
         "duration": 2,
-        "opacity": 0.8,
+        "opacity": 1,
         "speed": 3
       },
       "repulse": {
-        "distance": 200,
-        "duration": 0.4
+        "distance": 160,
+        "duration": 0.5
       },
       "push": {
-        "particles_nb": 4
+        "particles_nb": 3
       },
       "remove": {
         "particles_nb": 2
@@ -102,4 +88,41 @@ particlesJS("particles-js", {
     }
   },
   "retina_detect": true
-}); 
+});
+
+
+document.addEventListener("click", () => {
+  const colors = [
+    "000000", "ffffff", "#56a0d3"
+  ];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+  if (window.pJSDom && window.pJSDom[0]) {
+    const particles = window.pJSDom[0].pJS.particles;
+
+    // Update main particle color
+    particles.color.value = randomColor;
+    particles.color.rgb = hexToRgb(randomColor);
+
+    // Update each particle individually
+    particles.array.forEach(p => {
+      p.color.value = randomColor;
+      p.color.rgb = hexToRgb(randomColor);
+      // optional: update line link color too
+      p.line_linked_color_rgb_line = hexToRgb(randomColor);
+    });
+
+    // Update line_linked setting globally if you want the links to match
+    particles.line_linked.color = randomColor;
+  }
+});
+
+function hexToRgb(hex) {
+  hex = hex.replace(/^#/, '');
+  const bigint = parseInt(hex, 16);
+  return {
+    r: (bigint >> 16) & 255,
+    g: (bigint >> 8) & 255,
+    b: bigint & 255
+  };
+}
